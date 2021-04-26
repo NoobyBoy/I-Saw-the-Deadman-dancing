@@ -1,0 +1,11 @@
+
+
+When game done once . -> menu
+
+A check:
+
+ATAT sync
+podi sync
+tac tac sync
+shooter sync
+outro sync
