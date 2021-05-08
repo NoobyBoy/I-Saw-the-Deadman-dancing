@@ -3,11 +3,14 @@ using UnityEngine;
 using TMPro;
 public class CanvasScript : MonoBehaviour
 {
-    public GameObject sc;
-    public GameObject cr;
-    public TextMeshProUGUI txt;
+    //script used multiple times 
+
+    public GameObject sc; //only for outro
+    public GameObject cr; //only for outro
+    public TextMeshProUGUI txt; //only for outro
 
     bool isscore = true;
+    bool isVisible = false;
 
     public void switchh() {
         if (isscore)

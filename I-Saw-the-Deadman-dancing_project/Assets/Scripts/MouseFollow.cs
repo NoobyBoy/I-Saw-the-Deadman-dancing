@@ -11,7 +11,6 @@ public class MouseFollow : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
-        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         Invoke("unlock", 0.5f);
     }
@@ -20,6 +19,7 @@ public class MouseFollow : MonoBehaviour
     {
         if (control)
         {
+            Cursor.visible = false;
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
             transform.position = mousePos;
@@ -27,6 +27,9 @@ public class MouseFollow : MonoBehaviour
             pos.x = Mathf.Clamp01(pos.x);
             pos.y = Mathf.Clamp01(pos.y);
             transform.position = cam.ViewportToWorldPoint(pos);
+        } else
+        {
+            Cursor.visible = true;
         }
     }
     private void OnDisable()
