@@ -12,7 +12,7 @@ public class BackGround : MonoBehaviour
     void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector3(speed, 0, 0);
+        rb.linearVelocity = new Vector3(speed, 0, 0);
     }
 
     private void Update()   

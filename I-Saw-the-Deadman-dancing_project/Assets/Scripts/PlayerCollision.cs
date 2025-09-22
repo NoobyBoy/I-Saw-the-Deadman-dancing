@@ -30,6 +30,9 @@ public class PlayerCollision : MonoBehaviour
     bool canCol = true;
     float[] pp = { 0.38f, 0.44f, 0.51f, 0.61f };
 
+    [SerializeField] float shakeForce;
+    [SerializeField] float shakeLength;
+
     Vector3 CameraBasePosition = new Vector3(0, 0, -5);
 
     private void Start()
@@ -72,7 +75,7 @@ public class PlayerCollision : MonoBehaviour
         {
             canCol = false;
             boom.Play();
-            cam.DOShakePosition(0.1f, 0.5f).OnComplete(() => { cam.transform.position = CameraBasePosition; });
+            cam.DOShakePosition(shakeLength, shakeForce).OnComplete(() => { cam.transform.position = CameraBasePosition; });
             collisionNb++;
             rb.simulated = false;
             shield.color = startCol;

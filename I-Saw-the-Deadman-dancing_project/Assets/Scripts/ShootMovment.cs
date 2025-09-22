@@ -8,6 +8,6 @@ public class ShootMovment : MonoBehaviour
 
     private void Awake()
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(speed, 0, 0);
+        GetComponent<Rigidbody>().linearVelocity = new Vector3(speed, 0, 0);
     }
 }
